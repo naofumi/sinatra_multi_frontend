@@ -1,0 +1,14 @@
+{
+  "name": "sinatra",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["user", "admin"],
+  "scripts": {
+    "user": "yarn workspace @sinatra/user",
+    "admin": "yarn workspace @sinatra/admin",
+    "backend": "cd backend && rerun ruby myapp.rb",
+    "dev": "yarn user run dev & yarn admin run dev & yarn backend"
+  }
+}
