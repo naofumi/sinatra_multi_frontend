@@ -6,15 +6,15 @@ configure do
 end
 
 before do
-  headers 'Access-Control-Allow-Origin' => '*'
+  @headers = {'Access-Control-Allow-Origin' => '*'}
 end
 
 get '/' do
   data = { message: 'Hello World to users page from Sinatra!' }
-  [200, data.to_json]
+  [200, @headers, data.to_json]
 end
 
 get '/admin' do
   data = { message: 'Hello World to admin page from Sinatra!' }
-  [200, data.to_json]
+  [200, @headers, data.to_json]
 end

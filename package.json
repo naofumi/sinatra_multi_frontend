@@ -4,11 +4,18 @@
   "main": "index.js",
   "license": "MIT",
   "private": true,
-  "workspaces": ["user", "admin"],
+  "workspaces": [
+    "user",
+    "admin"
+  ],
   "scripts": {
     "user": "yarn workspace @sinatra/user",
     "admin": "yarn workspace @sinatra/admin",
     "backend": "cd backend && rerun ruby myapp.rb",
-    "dev": "yarn user run dev & yarn admin run dev & yarn backend"
+    "dev": "concurrently \"yarn user run dev\" \"yarn admin run dev\" & yarn backend",
+    "build": "yarn workspaces run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }
