@@ -38,3 +38,13 @@ and how the project structure can be hidden from CI/CD scripts.
 
 1. Ruby Sinatra as the backend. (`backend`)
 2. Vite React x 2 for the frontend. (`admin`, `user`)
+
+## Setup
+
+1. Download this repository
+2. Run `yarn install` in the project root directory.
+3. CD to the `backend` repository and run `bundle install`
+4. Go back to the project root directory and run `yarn dev` to run the production environment. You can access the user and admin backends at http://localhost:4000 and http://localhost:4100.
+5. To see how the production builds work, run `yarn build` and see what gets built – all frontends should be built simultaneously.
+
+This repository does not have a setup for deployment yet.
