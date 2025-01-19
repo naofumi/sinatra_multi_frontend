@@ -9,12 +9,12 @@ before do
   @headers = {'Access-Control-Allow-Origin' => '*'}
 end
 
-get '/' do
+get '/api' do
   data = { message: 'Hello World to users page from Sinatra!' }
   [200, @headers, data.to_json]
 end
 
-get '/admin' do
+get '/api/admin' do
   data = { message: 'Hello World to admin page from Sinatra!' }
   [200, @headers, data.to_json]
 end
